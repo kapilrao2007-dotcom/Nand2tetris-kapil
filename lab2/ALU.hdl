@@ -1,0 +1,265 @@
+CHIP ALU {
+    IN
+        x[16], y[16],
+        zx, nx,
+        zy, ny,
+        f,
+        no;
+
+    OUT
+        out[16],
+        zr,
+        ng;
+
+    PARTS:
+    Mux(a=x[0], b=false, sel=zx, out=xz0);
+    Not(in=xz0, out=xn0);
+    Mux(a=xz0, b=xn0, sel=nx, out=xf0);
+
+    Mux(a=x[1], b=false, sel=zx, out=xz1);
+    Not(in=xz1, out=xn1);
+    Mux(a=xz1, b=xn1, sel=nx, out=xf1);
+
+    Mux(a=x[2], b=false, sel=zx, out=xz2);
+    Not(in=xz2, out=xn2);
+    Mux(a=xz2, b=xn2, sel=nx, out=xf2);
+
+    Mux(a=x[3], b=false, sel=zx, out=xz3);
+    Not(in=xz3, out=xn3);
+    Mux(a=xz3, b=xn3, sel=nx, out=xf3);
+
+    Mux(a=x[4], b=false, sel=zx, out=xz4);
+    Not(in=xz4, out=xn4);
+    Mux(a=xz4, b=xn4, sel=nx, out=xf4);
+
+    Mux(a=x[5], b=false, sel=zx, out=xz5);
+    Not(in=xz5, out=xn5);
+    Mux(a=xz5, b=xn5, sel=nx, out=xf5);
+
+    Mux(a=x[6], b=false, sel=zx, out=xz6);
+    Not(in=xz6, out=xn6);
+    Mux(a=xz6, b=xn6, sel=nx, out=xf6);
+
+    Mux(a=x[7], b=false, sel=zx, out=xz7);
+    Not(in=xz7, out=xn7);
+    Mux(a=xz7, b=xn7, sel=nx, out=xf7);
+
+    Mux(a=x[8], b=false, sel=zx, out=xz8);
+    Not(in=xz8, out=xn8);
+    Mux(a=xz8, b=xn8, sel=nx, out=xf8);
+
+    Mux(a=x[9], b=false, sel=zx, out=xz9);
+    Not(in=xz9, out=xn9);
+    Mux(a=xz9, b=xn9, sel=nx, out=xf9);
+
+    Mux(a=x[10], b=false, sel=zx, out=xz10);
+    Not(in=xz10, out=xn10);
+    Mux(a=xz10, b=xn10, sel=nx, out=xf10);
+
+    Mux(a=x[11], b=false, sel=zx, out=xz11);
+    Not(in=xz11, out=xn11);
+    Mux(a=xz11, b=xn11, sel=nx, out=xf11);
+
+    Mux(a=x[12], b=false, sel=zx, out=xz12);
+    Not(in=xz12, out=xn12);
+    Mux(a=xz12, b=xn12, sel=nx, out=xf12);
+
+    Mux(a=x[13], b=false, sel=zx, out=xz13);
+    Not(in=xz13, out=xn13);
+    Mux(a=xz13, b=xn13, sel=nx, out=xf13);
+
+    Mux(a=x[14], b=false, sel=zx, out=xz14);
+    Not(in=xz14, out=xn14);
+    Mux(a=xz14, b=xn14, sel=nx, out=xf14);
+
+    Mux(a=x[15], b=false, sel=zx, out=xz15);
+    Not(in=xz15, out=xn15);
+    Mux(a=xz15, b=xn15, sel=nx, out=xf15);
+
+    Mux(a=y[0], b=false, sel=zy, out=yz0);
+    Not(in=yz0, out=yn0);
+    Mux(a=yz0, b=yn0, sel=ny, out=yf0);
+
+    Mux(a=y[1], b=false, sel=zy, out=yz1);
+    Not(in=yz1, out=yn1);
+    Mux(a=yz1, b=yn1, sel=ny, out=yf1);
+
+    Mux(a=y[2], b=false, sel=zy, out=yz2);
+    Not(in=yz2, out=yn2);
+    Mux(a=yz2, b=yn2, sel=ny, out=yf2);
+
+    Mux(a=y[3], b=false, sel=zy, out=yz3);
+    Not(in=yz3, out=yn3);
+    Mux(a=yz3, b=yn3, sel=ny, out=yf3);
+
+    Mux(a=y[4], b=false, sel=zy, out=yz4);
+    Not(in=yz4, out=yn4);
+    Mux(a=yz4, b=yn4, sel=ny, out=yf4);
+
+    Mux(a=y[5], b=false, sel=zy, out=yz5);
+    Not(in=yz5, out=yn5);
+    Mux(a=yz5, b=yn5, sel=ny, out=yf5);
+
+    Mux(a=y[6], b=false, sel=zy, out=yz6);
+    Not(in=yz6, out=yn6);
+    Mux(a=yz6, b=yn6, sel=ny, out=yf6);
+
+    Mux(a=y[7], b=false, sel=zy, out=yz7);
+    Not(in=yz7, out=yn7);
+    Mux(a=yz7, b=yn7, sel=ny, out=yf7);
+
+    Mux(a=y[8], b=false, sel=zy, out=yz8);
+    Not(in=yz8, out=yn8);
+    Mux(a=yz8, b=yn8, sel=ny, out=yf8);
+
+    Mux(a=y[9], b=false, sel=zy, out=yz9);
+    Not(in=yz9, out=yn9);
+    Mux(a=yz9, b=yn9, sel=ny, out=yf9);
+
+    Mux(a=y[10], b=false, sel=zy, out=yz10);
+    Not(in=yz10, out=yn10);
+    Mux(a=yz10, b=yn10, sel=ny, out=yf10);
+
+    Mux(a=y[11], b=false, sel=zy, out=yz11);
+    Not(in=yz11, out=yn11);
+    Mux(a=yz11, b=yn11, sel=ny, out=yf11);
+
+    Mux(a=y[12], b=false, sel=zy, out=yz12);
+    Not(in=yz12, out=yn12);
+    Mux(a=yz12, b=yn12, sel=ny, out=yf12);
+
+    Mux(a=y[13], b=false, sel=zy, out=yz13);
+    Not(in=yz13, out=yn13);
+    Mux(a=yz13, b=yn13, sel=ny, out=yf13);
+
+    Mux(a=y[14], b=false, sel=zy, out=yz14);
+    Not(in=yz14, out=yn14);
+    Mux(a=yz14, b=yn14, sel=ny, out=yf14);
+
+    Mux(a=y[15], b=false, sel=zy, out=yz15);
+    Not(in=yz15, out=yn15);
+    Mux(a=yz15, b=yn15, sel=ny, out=yf15);
+
+    And(a=xf0, b=yf0, out=and0);
+    And(a=xf1, b=yf1, out=and1);
+    And(a=xf2, b=yf2, out=and2);
+    And(a=xf3, b=yf3, out=and3);
+    And(a=xf4, b=yf4, out=and4);
+    And(a=xf5, b=yf5, out=and5);
+    And(a=xf6, b=yf6, out=and6);
+    And(a=xf7, b=yf7, out=and7);
+    And(a=xf8, b=yf8, out=and8);
+    And(a=xf9, b=yf9, out=and9);
+    And(a=xf10, b=yf10, out=and10);
+    And(a=xf11, b=yf11, out=and11);
+    And(a=xf12, b=yf12, out=and12);
+    And(a=xf13, b=yf13, out=and13);
+    And(a=xf14, b=yf14, out=and14);
+    And(a=xf15, b=yf15, out=and15);
+
+    HalfAdder(a=xf0, b=yf0, sum=add0, carry=c1);
+    FullAdder(a=xf1, b=yf1, c=c1, sum=add1, carry=c2);
+    FullAdder(a=xf2, b=yf2, c=c2, sum=add2, carry=c3);
+    FullAdder(a=xf3, b=yf3, c=c3, sum=add3, carry=c4);
+    FullAdder(a=xf4, b=yf4, c=c4, sum=add4, carry=c5);
+    FullAdder(a=xf5, b=yf5, c=c5, sum=add5, carry=c6);
+    FullAdder(a=xf6, b=yf6, c=c6, sum=add6, carry=c7);
+    FullAdder(a=xf7, b=yf7, c=c7, sum=add7, carry=c8);
+    FullAdder(a=xf8, b=yf8, c=c8, sum=add8, carry=c9);
+    FullAdder(a=xf9, b=yf9, c=c9, sum=add9, carry=c10);
+    FullAdder(a=xf10, b=yf10, c=c10, sum=add10, carry=c11);
+    FullAdder(a=xf11, b=yf11, c=c11, sum=add11, carry=c12);
+    FullAdder(a=xf12, b=yf12, c=c12, sum=add12, carry=c13);
+    FullAdder(a=xf13, b=yf13, c=c13, sum=add13, carry=c14);
+    FullAdder(a=xf14, b=yf14, c=c14, sum=add14, carry=c15);
+    FullAdder(a=xf15, b=yf15, c=c15, sum=add15, carry=overflow);
+
+    Mux(a=and0, b=add0, sel=f, out=r0);
+    Mux(a=and1, b=add1, sel=f, out=r1);
+    Mux(a=and2, b=add2, sel=f, out=r2);
+    Mux(a=and3, b=add3, sel=f, out=r3);
+    Mux(a=and4, b=add4, sel=f, out=r4);
+    Mux(a=and5, b=add5, sel=f, out=r5);
+    Mux(a=and6, b=add6, sel=f, out=r6);
+    Mux(a=and7, b=add7, sel=f, out=r7);
+    Mux(a=and8, b=add8, sel=f, out=r8);
+    Mux(a=and9, b=add9, sel=f, out=r9);
+    Mux(a=and10, b=add10, sel=f, out=r10);
+    Mux(a=and11, b=add11, sel=f, out=r11);
+    Mux(a=and12, b=add12, sel=f, out=r12);
+    Mux(a=and13, b=add13, sel=f, out=r13);
+    Mux(a=and14, b=add14, sel=f, out=r14);
+    Mux(a=and15, b=add15, sel=f, out=r15);
+
+    Not(in=r0, out=nr0);
+    Not(in=r1, out=nr1);
+    Not(in=r2, out=nr2);
+    Not(in=r3, out=nr3);
+    Not(in=r4, out=nr4);
+    Not(in=r5, out=nr5);
+    Not(in=r6, out=nr6);
+    Not(in=r7, out=nr7);
+    Not(in=r8, out=nr8);
+    Not(in=r9, out=nr9);
+    Not(in=r10, out=nr10);
+    Not(in=r11, out=nr11);
+    Not(in=r12, out=nr12);
+    Not(in=r13, out=nr13);
+    Not(in=r14, out=nr14);
+    Not(in=r15, out=nr15);
+
+    Mux(a=r0, b=nr0, sel=no, out=o0);
+    Mux(a=r1, b=nr1, sel=no, out=o1);
+    Mux(a=r2, b=nr2, sel=no, out=o2);
+    Mux(a=r3, b=nr3, sel=no, out=o3);
+    Mux(a=r4, b=nr4, sel=no, out=o4);
+    Mux(a=r5, b=nr5, sel=no, out=o5);
+    Mux(a=r6, b=nr6, sel=no, out=o6);
+    Mux(a=r7, b=nr7, sel=no, out=o7);
+    Mux(a=r8, b=nr8, sel=no, out=o8);
+    Mux(a=r9, b=nr9, sel=no, out=o9);
+    Mux(a=r10, b=nr10, sel=no, out=o10);
+    Mux(a=r11, b=nr11, sel=no, out=o11);
+    Mux(a=r12, b=nr12, sel=no, out=o12);
+    Mux(a=r13, b=nr13, sel=no, out=o13);
+    Mux(a=r14, b=nr14, sel=no, out=o14);
+    Mux(a=r15, b=nr15, sel=no, out=o15);
+
+    Or(a=o0, b=o1, out=z01);
+    Or(a=o2, b=o3, out=z23);
+    Or(a=o4, b=o5, out=z45);
+    Or(a=o6, b=o7, out=z67);
+    Or(a=o8, b=o9, out=z89);
+    Or(a=o10, b=o11, out=z1011);
+    Or(a=o12, b=o13, out=z1213);
+    Or(a=o14, b=o15, out=z1415);
+
+    Or(a=z01, b=z23, out=z0123);
+    Or(a=z45, b=z67, out=z4567);
+    Or(a=z89, b=z1011, out=z8911);
+    Or(a=z1213, b=z1415, out=z1215);
+
+    Or(a=z0123, b=z4567, out=zLow);
+    Or(a=z8911, b=z1215, out=zHigh);
+    Or(a=zLow, b=zHigh, out=anyOne);
+    Not(in=anyOne, out=zr);
+
+    Or(a=o0, b=o0, out=out[0]);
+    Or(a=o1, b=o1, out=out[1]);
+    Or(a=o2, b=o2, out=out[2]);
+    Or(a=o3, b=o3, out=out[3]);
+    Or(a=o4, b=o4, out=out[4]);
+    Or(a=o5, b=o5, out=out[5]);
+    Or(a=o6, b=o6, out=out[6]);
+    Or(a=o7, b=o7, out=out[7]);
+    Or(a=o8, b=o8, out=out[8]);
+    Or(a=o9, b=o9, out=out[9]);
+    Or(a=o10, b=o10, out=out[10]);
+    Or(a=o11, b=o11, out=out[11]);
+    Or(a=o12, b=o12, out=out[12]);
+    Or(a=o13, b=o13, out=out[13]);
+    Or(a=o14, b=o14, out=out[14]);
+    Or(a=o15, b=o15, out=out[15]);
+
+    Or(a=o15, b=o15, out=ng);
+}
